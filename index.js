@@ -4,7 +4,6 @@ const path = require('path');
 const morgan = require('morgan');
 
 // SETTINGS ----------------------------------------------------------------------------------------------------
-app.set('port', 888);
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
 
@@ -20,6 +19,6 @@ app.use((req, res, next) => {
     res.status(404).send('404 Not found');
 });
 
-app.listen(app.get('port'), () => {
-    console.log(`Server running on port ${app.get('port')}`)
+app.listen(process.env.PORT || 888, () => {
+    console.log(`Server running on port ${process.env.PORT || 888}`)
 });
