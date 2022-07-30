@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- CSS BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="/styles/style.css"> -->
+</head>
+
+<body class="bg-black">
+    <div class="container p-4">
+        <a style="color:white" href="/newentry" id="btn-newentry">
+            <button class="btn btn-primary">New entry</button>
+        </a>
+        <input type="text" id="searchText" class="form-control d-inline-block w-auto" placeholder="Search a product">
+        <p id="products" class="d-none"><%= productsJson %></p>
+        <div class="row" id="rowContainer">
+            <% products.forEach( function (product) { %>
+                <div class="col-md-3">
+                    <div class="card m-1 d-inline-block">
+                        <div class="card-header">
+                            <p>Name: <%= product.name %>
+                            </p>
+                        </div>
+
+                        <div class="card-body">
+                            <p>Description: <%= product.description %>
+                            </p>
+                            <p>Category: <%= product.category %>
+                            </p>
+                            <p>Stock: <%= product.stock %>
+                            </p>
+                            <img src="<%= product.image %>" class="card-img-top">
+                        </div>
+
+                        <div class="card-footer">
+                            <a href="/delete/<%= product.id %>">
+                                <button class="btn btn-danger">
+                                    Delete
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+        </div>
+    </div>
+
+    <script src="/scripts/script.js"></script>
+</body>
+
+</html>

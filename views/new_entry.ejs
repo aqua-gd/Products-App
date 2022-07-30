@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New entry</title>
+    <!-- CSS BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="/styles/style.css"> -->
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <div class="element container p-4">
+        <h1 style="display:inline-block; padding:.5rem 1rem">New Entry</h1>
+        <a style="color:white" href="/" id="btn-newentry">
+            <button class="btn btn-primary">Home</button>
+        </a>
+
+        <form method="post" action="/newentry" class="element card card-body">
+            <div class="element form-group">
+                <label for="name">Name product:</label>
+                <input type="text" class="element form-control" name="name" id="title" placeholder="Input a name" autofocus required>
+            </div>
+
+            <div class="element form-group">
+                <label for="description">Description:</label>
+                <textarea cols="30" rows="3" class="element form-control" name="description" id="description" placeholder="Input a description"></textarea>
+            </div>
+
+            <div class="element form-group">
+                <label for="category">Category:</label>
+                <select name="category" id="category">
+                    <option value="category1">Category1</option>
+                    <option value="category2">Category2</option>
+                    <option value="category3">Category3</option>
+                </select>
+            </div>
+
+            <div class="element form-group">
+                <label for="stock">Stock:</label>
+                <input type="number" class="element form-control" name="stock" id="stock" placeholder="Stock" required>
+            </div>
+
+            <div class="element form-group">
+                <label for="image">Image URL:</label>
+                <input type="text" class="element form-control" name="image" id="image" placeholder="https://website.com" required>
+            </div>
+
+            <!-- <div data-netlify-recaptcha="true"></div> -->
+            <input type="submit" value="Add" class="element btn btn-primary">
+        </form>    
+    </div>
+</body>
+</html>
